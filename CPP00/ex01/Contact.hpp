@@ -1,3 +1,6 @@
+#ifndef CONTACT_HPP
+#define CONTACT_HPP
+
 #include <string>
 
 class Contact
@@ -22,3 +25,5 @@ class Contact
 		const std::string	&getPhoneNumber(void) const { return phoneNumber; };
 		const std::string	&getDarkestSecret(void) const { return darkestSecret; };
 };
+
+#endif

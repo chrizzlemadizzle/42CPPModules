@@ -1,8 +1,9 @@
+#include <cstdio>
 #include <iostream>
 #include <ostream>
-#include <iomanip>
 #include <string>
 #include "PhoneBook.hpp"
+#include "Utils.hpp"
 
 int main()
 {
@@ -12,18 +13,16 @@ int main()
 	std::cout << "Welcome to PhoneBook!" << std::endl;
 	while (1)
 	{
-		std::cout << std::setw(54) << std::setfill('#') << "" << std::endl;
-		std::cout << "Please enter one of these commands: ADD, SEARCH, EXIT.\n";
-		std::cout << ">";
+		printDefaultPrompt();
 		std::getline(std::cin, userinput);
 		if (userinput == "ADD")
 			phonebook.addContact();
 		else if (userinput == "SEARCH")
 			phonebook.search();
 		else if (userinput == "EXIT")
-		{
-			std::cout << "Lets exit!\n";
-		}
+			break ;
+		else
+			std::cout << "Unknown Command.\n";
 	}
 	return (0);
 }

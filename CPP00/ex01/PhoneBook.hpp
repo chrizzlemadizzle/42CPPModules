@@ -1,3 +1,6 @@
+#ifndef PHONEBOOK_HPP
+#define PHONEBOOK_HPP
+
 #include "Contact.hpp"
 
 class PhoneBook
@@ -6,10 +9,12 @@ class PhoneBook
 		Contact	contacts[8];
 		int		id;
 		int		size;
-		void	displayContactTable() const;
+		void	printContactTable() const;
 
 	public:
 		PhoneBook();
 		void	addContact();
 		void	search() const;
 };
+
+#endif
