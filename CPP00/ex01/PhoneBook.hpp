@@ -3,7 +3,13 @@
 class PhoneBook
 {
 	private:
-		Contact	Contacts[8];
+		Contact	contacts[8];
+		int		id;
+		int		size;
+		void	displayContactTable() const;
+
 	public:
 		PhoneBook();
+		void	addContact();
+		void	search() const;
 };

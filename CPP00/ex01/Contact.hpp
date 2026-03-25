@@ -9,11 +9,16 @@ class Contact
 		std::string	phoneNumber;
 		std::string	darkestSecret;
 	public:
-		Contact ();
-		Contact (std::string, std::string, std::string, std:: string, std::string);
-		std::string	getFirstName(void) {return firstName;};
-		std::string getLastName(void) {return lastName;};
-		std::string getNickName(void) {return nickName;};
-		std::string getPhoneNumber(void) {return phoneNumber;};
-		std::string getDarkestSecret(void) {return darkestSecret;};
+		Contact();
+		Contact(const std::string &first,
+				const std::string &last,
+				const std::string &nick,
+				const std::string &phone,
+				const std::string &secret);
+
+		const std::string	&getFirstName(void) const { return firstName; };
+		const std::string	&getLastName(void) const { return lastName; };
+		const std::string	&getNickName(void) const { return nickName; };
+		const std::string	&getPhoneNumber(void) const { return phoneNumber; };
+		const std::string	&getDarkestSecret(void) const { return darkestSecret; };
 };

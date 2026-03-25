@@ -1,20 +1,24 @@
 #include "Contact.hpp"
 
 // Constructors
-Contact::Contact()
+Contact::Contact() :
+	firstName(""),
+	lastName (""),
+	nickName (""),
+	phoneNumber (""),
+	darkestSecret ("")
 {
-	firstName = "empty";
-	lastName = "empty";
-	nickName = "empty";
-	phoneNumber = "empty";
-	darkestSecret = "empty";
 }
 
-Contact::Contact(std::string a, std::string b, std::string c, std::string d, std::string e)
+Contact::Contact(const std::string &first,
+				const std::string &last,
+				const std::string &nick,
+				const std::string &phone,
+				const std::string &secret)
+	:	firstName(first),
+		lastName(last),
+		nickName(nick),
+		phoneNumber(phone),
+		darkestSecret(secret)
 {
-	firstName = a;
-	lastName = b;
-	nickName = c;
-	phoneNumber = d;
-	darkestSecret = e;
 }
