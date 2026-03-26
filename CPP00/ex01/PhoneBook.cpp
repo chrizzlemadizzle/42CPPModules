@@ -20,16 +20,16 @@ void	PhoneBook::addContact()
 	std::string phone;
 	std::string secret;
 
-	std::cout << std::setw(28) << std::left << "Please enter first name:";
-	std::getline(std::cin, first);
-	std::cout << std::setw(28) << std::left << "Please enter last name:";
-	std::getline(std::cin, last);
-	std::cout << std::setw(28) << std::left << "Please enter nick name:";
-	std::getline(std::cin, nick);
-	std::cout << std::setw(28) << std::left << "Please enter phone number:";
-	std::getline(std::cin, phone);
-	std::cout << std::setw(28) << std::left << "Please enter darkest secret:";
-	std::getline(std::cin, secret);
+	if (!readNonEmptyField("Please enter first name:", first))
+		return ;
+	if (!readNonEmptyField("Please enter last name:", last))
+		return ;
+	if (!readNonEmptyField("Please enter nick name:", nick))
+		return ;
+	if (!readNonEmptyField("Please enter phone number:", phone))
+		return ;
+	if (!readNonEmptyField("Please enter darkest secret:", secret))
+		return ;
 
 	contacts[id] = Contact(first, last, nick, phone, secret);
 	if (size < 8)
@@ -94,6 +94,7 @@ void	PhoneBook::search() const
 	std::cout << "Please enter index to display full contact information:\n" << ">";
 	if (!readIndex(index, size))
 		return ;
+	printSeperator();
 	std::cout << std::left << std::setw(15) << "first name:" << contacts[index].getFirstName() << "\n";
 	std::cout << std::left << std::setw(15) << "last name:" << contacts[index].getLastName() << "\n";
 	std::cout << std::left << std::setw(15) << "nick name:" << contacts[index].getNickName() << "\n";
